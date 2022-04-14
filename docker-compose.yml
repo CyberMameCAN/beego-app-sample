@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  golang:
+    container_name: beego-app-project
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - USER_ID=${LOCALUID}
+        - GROUP_ID=${LOCALGID}
+    ports:
+      - "28080:8080"
+    command: sh -c "cd app && go get app && bee run"
+    volumes:
+      - ./app:/go/src/github.com/app

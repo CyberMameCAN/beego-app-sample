@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>BBS Go</title>
+    <link rel="stylesheet" href="/static/css/style.css" type="text/css" media="all">
+</head>
+<body>
+<div id="whitebase">
+    <header>
+        <h1>BBS Go</h1>
+    </header>
+
+    <div class="main">
+        <div class="bbs-form">
+            <form action="/postup" method="POST">
+                <label for="name">名前:</label><input type="text" name="name" id="name" /><br />
+                <label for="body">本文:</label><input type="text" name="body" id="body" style='width:30em;' /><br />
+                <input type="submit" name="submit" value="書き込み" />
+            </form>
+        </div>
+
+        <div class="bbs-rapper">
+            <h2>掲示板</h2>
+            {{ range.logs }}
+            <div class="bbs-record">
+                <h3><span class="bbs-id">{{.ID}}</span> {{.Name}} <span class="bbs-time">{{.CTime}}</span></h3>
+                <div>{{.Body}}</div>
+                </tr>
+            </div>
+            {{end}}
+        </div>
+    </div>
+
+    <footer>
+
+    </footer>
+</div>
+
+</body>
+</html>
