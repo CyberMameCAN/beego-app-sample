@@ -16,11 +16,12 @@ BeegoでAppを開発する際、ベースになれるような環境になれば
 
 user idとgroup idを.envに書き込む  
 【注意】このパラメータを指定してdocker-compose upしたら、コンテナ側で作られるユーザー権限が自分になれるかと思ったが上手く行っていない。  
-スクリプトはこちらから頂きました。  
-- [docker-composeで起動したプロセスのUID、GIDをホストユーザと同じにする](https://qiita.com/shun_xx/items/5608e553a16d94afacd2)
 
     cd beego-app
     bash ./make_env.sh
+
+スクリプトはこちらから頂きました。  
+- [docker-composeで起動したプロセスのUID、GIDをホストユーザと同じにする](https://qiita.com/shun_xx/items/5608e553a16d94afacd2)
 
 コンテナ作って起動する
 
